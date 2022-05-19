@@ -1,0 +1,43 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h1>Logout page</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h4>Do you want to Logout?</h4>
+        <button type="submit" class="btn btn-info">Logout</button>
+        <a href="{% url 'home' %}"><button type="submit" class="btn btn-info">Go back</button></a>
+    </form>
+
+{% else %}
+<div> 
+<h3>Login page</h3>
+    <form action = "" method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+       <!-- <label>Username</label>
+       <input type="username" name="username">
+       <label>Password</label>
+       <input type="password" name="password"> -->
+
+       <div class="form-floating mb-3">
+        <input type="username" class="form-control" id="floatingInput" placeholder="name" name="username">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+        <label for="floatingPassword">Password</label>
+      </div>
+        <button type="submit" class="btn btn-info">Login</a></button> 
+    </form>
+    
+   
+<h3>Have you signed up?</h3><a href="{% url 'signup' %}"><button type="submit" class="btn btn-info">Sign Up</button></a>
+</div>
+{% endif %} 
+
+{% endblock content %}
+

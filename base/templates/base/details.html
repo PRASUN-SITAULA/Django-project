@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="post-entry">
+    <h2>{{details.title}}</h2>
+    <p>{{details.body}}</p> 
+</div>
+
+<button type="submit" class="btn btn-warning"><a href="{%  url 'update_post' details.id %}">Update</h6></a></button>
+<button type="submit" class="btn btn-warning"><a href="{%  url 'delete' details.id %}">Delete</h6></a></button>
+{% endblock content %}

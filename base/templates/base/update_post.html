@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="post-entry">
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <h4 style="color :rgb(248, 246, 246);">  <button type="submit" class="btn btn-info">Update</button></p>
+</form>
+</div>
+{% endblock content %}
